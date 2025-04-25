@@ -1,22 +1,51 @@
+---
+import "../styles/global.css";
+
+type LayoutProps = {
+  title: string;
+};
+
+const { title } = Astro.props as LayoutProps;
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Portafolio {title && `- ${title}`}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="relative bg-linear-250 from-zinc-700 to-zinc-950">
+    <heade
+      class="fixed top-0 left-0 right-0 grid grid-cols-4 gap-4 content-center pt-8 pl-10"
+    >
+      <p class="grid grid-rows-2">
+        <span
+          class="font-black font-[Jost] text-white/80 text-xl text-shadow text-shadow-black text-shadow-md"
+          >JHOFRAN</span
+        >
+      </p>
+      <nav class="col-span-2 col-start-3">
+        <ul
+          class="grid grid-cols-5 col-start-2 text-neutral-500 text-xs font-semibold uppercase"
+        >
+          <li class="mx-auto col-start-2"><a href="/">Sobre Mí</a></li>
+          <li class="mx-auto"><a href="/">Habilidades</a></li>
+          <li class="mx-auto"><a href="/">Proyectos</a></li>
+          <li class="mx-auto"><a href="/"> Contacto</a></li>
+        </ul>
+      </nav>
+    </heade>
+    <main>
+      <slot />
+    </main>
+  </body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
