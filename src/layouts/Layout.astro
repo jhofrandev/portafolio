@@ -17,7 +17,7 @@ const { title } = Astro.props as LayoutProps;
     <meta name="generator" content={Astro.generator} />
     <title>Portafolio {title && `- ${title}`}</title>
   </head>
-  <body>
+  <body class="h-screen">
     <slot />
   </body>
 </html>
