@@ -24,7 +24,9 @@ const { title } = Astro.props as LayoutProps;
     />
   </head>
   <body class="h-screen bg-[#FCFAEE] p-1">
-    <div class="h-[100%] p-1 border border-dotted border-[#507687]">
+    <div
+      class="h-[100%] flex flex-col gap-1 p-1 border border-dotted border-[#507687]"
+    >
       <header
         class="grid grid-cols-6 gap-0.5 p-1 border border-[#507687] text-[#384B70]"
       >
@@ -72,9 +74,15 @@ const { title } = Astro.props as LayoutProps;
         </ul>
       </header>
 
-      <main class="border border-[#507687]">
+      <main class="flex-auto border border-[#507687]">
         <slot />
       </main>
+
+      <footer
+        class="p-1 border border-[#507687] text-center text-xs text-[#384B70] font-bold"
+      >
+        <p>Portafolio-v0.1.0</p>
+      </footer>
     </div>
   </body>
 </html>
