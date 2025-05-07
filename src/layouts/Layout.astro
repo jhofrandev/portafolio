@@ -1,11 +1,8 @@
 ---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
 import "../styles/global.css";
-
-type LayoutProps = {
-  title: string;
-};
-
-const { title } = Astro.props as LayoutProps;
 ---
 
 <!doctype html>
@@ -28,38 +25,12 @@ const { title } = Astro.props as LayoutProps;
     />
   </head>
   <body class="min-h-screen flex flex-col px-5">
-    <header class="border-b-1 border-dotted border-[#B9B28A] py-2">
-      <h1 class="font-[VT323] font-medium">
-        <span class="text-[#B9B28A]"> title:</span>
-        <span class="text-[#123458]">
-          $(<span class="text-[#2DAA9E]">jhofran.b</span>)
-        </span>
-      </h1>
-    </header>
+    <Header />
     <main
       class="flex-auto border border-dotted border-[#B9B28A] rounded-lg my-4"
     >
       <slot />
     </main>
-    <footer
-      class="border-t-1 border-dotted border-[#B9B28A] flex justify-between py-2"
-    >
-      <div class="flex font-[VT323] font-medium">
-        <p>social</p>
-        <ul class="flex text-[#123458]">
-          {": "}
-          $(
-          <li><a class="text-[#2DAA9E]" href="">github</a></li>,
-          <li><a class="text-[#2DAA9E]" href=""> linkedin</a></li>
-          )
-        </ul>
-      </div>
-      <p class="font-[VT323] font-medium">
-        <span class="text-[#B9B28A]">version:</span>
-        <span class="text-[#123458]">
-          $(<span class="text-[#2DAA9E]">0.1.0</span>)
-        </span>
-      </p>
-    </footer>
+    <Footer />
   </body>
 </html>
