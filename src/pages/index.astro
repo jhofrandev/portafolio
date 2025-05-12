@@ -1,11 +1,11 @@
 ---
+import Menu from "../components/Menu";
 import Layout from "../layouts/Layout.astro";
 import Presentation from "../components/Presentation";
-import Menu from "../components/Menu";
 ---
 
 <Layout>
-  <section>
+  <section class="relative">
     <Presentation />
     <Menu client:load />
   </section>
