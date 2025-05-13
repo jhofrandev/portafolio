@@ -7,17 +7,23 @@ export default function Menu() {
       <article className="pt-4 mx-4">
         <Option typeOption={1} nameOption="Información">
           <ul className="pl-4 text-neutral-500 text-sm font-[VT323]">
-            <li className="flex gap-1">
-              <i className="fa-regular fa-file-lines"></i>
-              <p>sobre_mi.pdf</p>
+            <li>
+              <a className="flex gap-1" href="/about">
+                <i className="fa-regular fa-file-lines"></i>
+                sobre_mi.pdf
+              </a>
             </li>
-            <li className="flex gap-1">
-              <i className="fa-regular fa-file-lines"></i>
-              <p>experiencia.pdf</p>
+            <li>
+              <a className="flex gap-1" href="/">
+                <i className="fa-regular fa-file-lines"></i>
+                experiencia.pdf
+              </a>
             </li>
-            <li className="flex gap-1">
-              <i className="fa-regular fa-file-lines"></i>
-              <p>habilidades.pdf</p>
+            <li>
+              <a className="flex gap-1" href="/">
+                <i className="fa-regular fa-file-lines"></i>
+                habilidades.pdf
+              </a>
             </li>
           </ul>
         </Option>
@@ -59,10 +65,6 @@ export default function Menu() {
 
         <Option typeOption={1} nameOption="Blog" />
       </article>
-
-      <div className=" absolute top-5 left-12 border border-dotted border-[#B9B28A] w-96 h-[550px] bg-white">
-        Hola
-      </div>
     </PortafolioProvider>
   );
 }
