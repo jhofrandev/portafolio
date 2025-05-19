@@ -1,5 +1,6 @@
 import Option from "./Option";
 import { PortafolioProvider } from "../context/PortafolioContext";
+import ModalAbout from "./ModalAbout";
 
 export default function Menu() {
   return (
@@ -7,23 +8,17 @@ export default function Menu() {
       <article className="pt-4 mx-4">
         <Option typeOption={1} nameOption="Información">
           <ul className="pl-4 text-neutral-500 text-sm font-[VT323]">
-            <li>
-              <a className="flex gap-1" href="/about">
-                <i className="fa-regular fa-file-lines"></i>
-                sobre_mi.pdf
-              </a>
+            <li className="flex gap-1">
+              <i className="fa-regular fa-file-lines"></i>
+              sobre_mi.pdf
             </li>
-            <li>
-              <a className="flex gap-1" href="/">
-                <i className="fa-regular fa-file-lines"></i>
-                experiencia.pdf
-              </a>
+            <li className="flex gap-1">
+              <i className="fa-regular fa-file-lines"></i>
+              experiencia.pdf
             </li>
-            <li>
-              <a className="flex gap-1" href="/">
-                <i className="fa-regular fa-file-lines"></i>
-                habilidades.pdf
-              </a>
+            <li className="flex gap-1">
+              <i className="fa-regular fa-file-lines"></i>
+              habilidades.pdf
             </li>
           </ul>
         </Option>
@@ -65,6 +60,7 @@ export default function Menu() {
 
         <Option typeOption={1} nameOption="Blog" />
       </article>
+      <ModalAbout />
     </PortafolioProvider>
   );
 }
