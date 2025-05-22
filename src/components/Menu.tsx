@@ -1,13 +1,15 @@
 import Option from "./Option";
-import { PortafolioProvider } from "../context/PortafolioContext";
 import ModalAbout from "./ModalAbout";
+import ModalExpertise from "./ModalExpertise";
 import { usePortafolio } from "../hooks/usePortafilio";
+import { PortafolioProvider } from "../context/PortafolioContext";
 
 export default function Menu() {
   return (
     <PortafolioProvider>
       <MenuContent />
       <ModalAbout />
+      <ModalExpertise />
     </PortafolioProvider>
   );
 }
@@ -33,9 +35,19 @@ function MenuContent() {
               sobre_mi.pdf
             </button>
           </li>
-          <li className="flex gap-1">
-            <i className="fa-regular fa-file-lines"></i>
-            experiencia.pdf
+          <li>
+            <button
+              type="button"
+              className="flex gap-1 items-center w-full text-left"
+              onClick={() =>
+                dispatch({
+                  type: "is-open-modal-expertise",
+                })
+              }
+            >
+              <i className="fa-regular fa-file-lines"></i>
+              experiencia.pdf
+            </button>
           </li>
           <li className="flex gap-1">
             <i className="fa-regular fa-file-lines"></i>

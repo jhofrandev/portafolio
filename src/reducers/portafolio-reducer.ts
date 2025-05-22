@@ -1,18 +1,21 @@
 export type PortafolioActions =
   | { type: "is-open-option" }
   | { type: "is-open-option-project" }
-  | { type: "is-open-modal-about" };
+  | { type: "is-open-modal-about" }
+  | { type: "is-open-modal-expertise" };
 
 export type PortafolioState = {
   isOpenOption: boolean;
   isOpenOptionProject: boolean;
   isOpenModalAbout: boolean;
+  isOpenModalExpertise: boolean;
 };
 
 export const initialState: PortafolioState = {
   isOpenOption: false,
   isOpenOptionProject: false,
   isOpenModalAbout: false,
+  isOpenModalExpertise: false,
 };
 
 export const portafolioReducer = (
@@ -37,6 +40,12 @@ export const portafolioReducer = (
     return {
       ...state,
       isOpenModalAbout: !state.isOpenModalAbout,
+    };
+  }
+  if (action.type === "is-open-modal-expertise") {
+    return {
+      ...state,
+      isOpenModalExpertise: !state.isOpenModalExpertise,
     };
   }
 

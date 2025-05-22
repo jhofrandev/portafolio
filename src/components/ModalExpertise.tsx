@@ -1,7 +1,7 @@
 import { usePortafolio } from "../hooks/usePortafilio";
 import { useEffect, useRef, useState } from "react";
 
-export default function ModalAbout() {
+export default function ModalExpertise() {
   const { state, dispatch } = usePortafolio();
   const modalRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 15, y: 60 }); // left: 4rem, top: 3.75rem aprox
@@ -51,57 +51,27 @@ export default function ModalAbout() {
         zIndex: 50,
       }}
       className={`${
-        state.isOpenModalAbout ? "flex" : "hidden"
-      } flex flex-col gap-0.5 p-0.5 h-[600px] w-[400px] border border-dotted bg-white overflow-auto`}
+        state.isOpenModalExpertise ? "flex" : "hidden"
+      } flex flex-col gap-0.5 p-0.5 h-[600px] w-[500px] border border-dotted bg-white overflow-auto`}
     >
       <div
         className="flex gap-0.5 border border-[#b9b28a] p-0.5 text-md font-[VT323] cursor-move select-none"
         onMouseDown={handleMouseDown}
       >
-        <h2 className="flex-auto border border-[#b9b28a] pl-1">sobre_mi.pdf</h2>
+        <h2 className="flex-auto border border-[#b9b28a] pl-1">
+          experiencia.pdf
+        </h2>
         <button
           type="button"
           className="border border-[#b9b28a] px-2 py-0 text-lg text-neutral-500"
-          onClick={() => dispatch({ type: "is-open-modal-about" })}
+          onClick={() => dispatch({ type: "is-open-modal-expertise" })}
         >
           X
         </button>
       </div>
       <article className="px-4 pt-4">
-        <figure>
-          <img
-            className="h-40"
-            src="../../public/mi-portada.png"
-            alt="imagen de portada"
-          />
-        </figure>
-        <div className="flex flex-col gap-2 mt-4">
-          <p className="font-[VT323]">
-            Llevo 5 años en el mundo de la programación, explorando diferentes
-            áreas: desde tareas como auxiliar de DevOps o programar un Arduino
-            para controlar sensores, hasta el desarrollo web, tanto en frontend
-            como en backend. Esta variedad de experiencias me ha permitido
-            comprender mejor muchos aspectos de la tecnología y el desarrollo de
-            software.
-            <br />
-            <br />
-            He aprendido que, más allá de ser experto en algo, existen muchas
-            cualidades personales que nos permiten ser mejores programadores,
-            como la disciplina, la constancia y la curiosidad por aprender cosas
-            nuevas.
-            <span className="block font-semibold mt-3 mb-2">
-              Experiencia y habilidades:
-            </span>
-            <span className="block border-l-1 ml-1 pl-2 mb-2">
-              Frontend (JavaScript, React)
-            </span>
-            <span className="block border-l-1 ml-1 pl-2 mb-2">
-              Backend (Python, FastAPI)
-            </span>
-            <span className="block border-l-1 ml-1 pl-2 mb-2">
-              Bases de datos (PostgreSQL, MySQL)
-            </span>
-          </p>
+        <div className="mt-2 pt-4 border-t border-dotted border-[#B9B28A] font-[VT323]">
+          <h3>Corporación P.C.A | Monitor, Bootcamps - Análisis de datos</h3>
         </div>
       </article>
     </div>
