@@ -1,6 +1,6 @@
 export default function Presentation() {
   return (
-    <article className="py-4 mx-4 border-b-1 border-dotted border-[#B9B28A]">
+    <article className="py-4 mx-4 border-b-1 border-dashed border-[#B9B28A]">
       <div className="mb-4 flex gap-3 items-center">
         <figure className="relative rounded-full">
           <img

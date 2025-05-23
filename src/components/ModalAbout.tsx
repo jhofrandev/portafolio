@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 export default function ModalAbout() {
   const { state, dispatch } = usePortafolio();
   const modalRef = useRef<HTMLDivElement>(null);
-  const [position, setPosition] = useState({ x: 15, y: 60 }); // left: 4rem, top: 3.75rem aprox
+  const [position, setPosition] = useState({ x: 6, y: 60 }); // left: 4rem, top: 3.75rem aprox
   const [dragging, setDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
 
@@ -52,7 +52,7 @@ export default function ModalAbout() {
       }}
       className={`${
         state.isOpenModalAbout ? "flex" : "hidden"
-      } flex flex-col gap-0.5 p-0.5 h-[600px] w-[400px] border border-dotted bg-white overflow-auto`}
+      } flex flex-col gap-0.5 p-0.5 h-[600px] w-[400px] border border-dashed border-[#b9b28a] bg-white overflow-auto`}
     >
       <div
         className="flex gap-0.5 border border-[#b9b28a] p-0.5 text-md font-[VT323] cursor-move select-none"
@@ -75,7 +75,7 @@ export default function ModalAbout() {
             alt="imagen de portada"
           />
         </figure>
-        <div className="flex flex-col gap-2 mt-4">
+        <div className="flex flex-col gap-2 mt-4 text-xl leading-6">
           <p className="font-[VT323]">
             Llevo 5 años en el mundo de la programación, explorando diferentes
             áreas: desde tareas como auxiliar de DevOps o programar un Arduino
@@ -96,7 +96,7 @@ export default function ModalAbout() {
               Frontend (JavaScript, React)
             </span>
             <span className="block border-l-1 ml-1 pl-2 mb-2">
-              Backend (Python, FastAPI)
+              Backend (Python, FastAPI, Django)
             </span>
             <span className="block border-l-1 ml-1 pl-2 mb-2">
               Bases de datos (PostgreSQL, MySQL)

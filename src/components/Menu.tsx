@@ -1,5 +1,6 @@
 import Option from "./Option";
 import ModalAbout from "./ModalAbout";
+import ModalSkills from "./ModalSkills";
 import ModalExpertise from "./ModalExpertise";
 import { usePortafolio } from "../hooks/usePortafilio";
 import { PortafolioProvider } from "../context/PortafolioContext";
@@ -10,6 +11,7 @@ export default function Menu() {
       <MenuContent />
       <ModalAbout />
       <ModalExpertise />
+      <ModalSkills />
     </PortafolioProvider>
   );
 }
@@ -50,14 +52,24 @@ function MenuContent() {
             </button>
           </li>
           <li className="flex gap-1">
-            <i className="fa-regular fa-file-lines"></i>
-            habilidades.pdf
+            <button
+              type="button"
+              className="flex gap-1 items-center w-full text-left"
+              onClick={() =>
+                dispatch({
+                  type: "is-open-modal-skills",
+                })
+              }
+            >
+              <i className="fa-regular fa-file-lines"></i>
+              habilidades.pdf
+            </button>
           </li>
         </ul>
       </Option>
 
       <Option typeOption={1} nameOption="Proyectos">
-        <ul className="h-32 border border-dotted border-[#B9B28A] rounded-lg pl-4 py-1 grid grid-cols-1 overflow-auto text-neutral-500 text-sm font-[VT323]">
+        <ul className="h-32 border border-dashed border-[#B9B28A] rounded-lg pl-4 py-1 grid grid-cols-1 overflow-auto text-neutral-500 text-sm font-[VT323]">
           <div>
             <li className="flex gap-1 items-center">
               <i className="fa-regular fa-file-lines"></i>
