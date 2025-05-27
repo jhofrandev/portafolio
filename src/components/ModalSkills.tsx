@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 export default function ModalSkills() {
   const { state, dispatch } = usePortafolio();
   const modalRef = useRef<HTMLDivElement>(null);
-  const [position, setPosition] = useState({ x: 6, y: 70 }); // left: 4rem, top: 3.75rem aprox
+  const [position, setPosition] = useState({ x: 6, y: 120 }); // left: 4rem, top: 3.75rem aprox
   const [dragging, setDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
 

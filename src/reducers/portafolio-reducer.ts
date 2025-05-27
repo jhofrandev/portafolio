@@ -1,9 +1,14 @@
+import projects from "../data/projects";
+import type { Project } from "../types";
+
 export type PortafolioActions =
   | { type: "is-open-option" }
   | { type: "is-open-option-project" }
   | { type: "is-open-modal-about" }
   | { type: "is-open-modal-expertise" }
-  | { type: "is-open-modal-skills" };
+  | { type: "is-open-modal-skills" }
+  | { type: "show-project"; payload: { id: Project["id"] } }
+  | { type: "hidden-project" };
 
 export type PortafolioState = {
   isOpenOption: boolean;
@@ -11,6 +16,9 @@ export type PortafolioState = {
   isOpenModalAbout: boolean;
   isOpenModalExpertise: boolean;
   isOpenModalSkills: boolean;
+  projects: Project[];
+  projectActive: Project;
+  activeId: Project["id"];
 };
 
 export const initialState: PortafolioState = {
@@ -19,6 +27,16 @@ export const initialState: PortafolioState = {
   isOpenModalAbout: false,
   isOpenModalExpertise: false,
   isOpenModalSkills: false,
+  projects: projects,
+  projectActive: {
+    id: 0,
+    title: "",
+    description: "",
+    imageUrl: "",
+    pageUrl: "",
+    codeUrl: "",
+  },
+  activeId: 0,
 };
 
 export const portafolioReducer = (
@@ -55,6 +73,21 @@ export const portafolioReducer = (
     return {
       ...state,
       isOpenModalSkills: !state.isOpenModalSkills,
+    };
+  }
+  if (action.type === "show-project") {
+    return {
+      ...state,
+      activeId: action.payload.id,
+      projectActive: state.projects.filter(
+        (project) => project.id === action.payload.id
+      )[0],
+    };
+  }
+  if (action.type === "hidden-project") {
+    return {
+      ...state,
+      activeId: 0,
     };
   }
 
