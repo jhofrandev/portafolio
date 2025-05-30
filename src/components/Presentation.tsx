@@ -1,4 +1,19 @@
+import Modal from "./Modal";
+import { usePortafolio } from "../hooks/usePortafilio";
+import { PortafolioProvider } from "../context/PortafolioContext";
+
 export default function Presentation() {
+  return (
+    <PortafolioProvider>
+      <PresentationContent />
+      <Modal />
+    </PortafolioProvider>
+  );
+}
+
+function PresentationContent() {
+  const { dispatch } = usePortafolio();
+
   return (
     <article className="py-4 mx-4 border-b-1 border-dashed border-[#B9B28A]">
       <div className="mb-4 flex gap-3 items-center">
@@ -22,7 +37,10 @@ export default function Presentation() {
         posible. Creo que, con tiempo y trabajo en equipo, no hay código que no
         podamos conquistar.
       </p>
-      <button className="cursor-pointer text-[#FF9F00] font-[VT323] font-semibold hover:text-[#ffd900]">
+      <button
+        className="cursor-pointer text-[#FF9F00] font-[VT323] font-semibold hover:text-[#ffd900]"
+        onClick={() => dispatch({ type: "is-open-modal" })}
+      >
         Trabajemos Juntos
       </button>
     </article>
